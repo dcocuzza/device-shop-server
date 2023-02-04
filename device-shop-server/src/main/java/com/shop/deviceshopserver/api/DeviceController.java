@@ -2,6 +2,7 @@ package com.shop.deviceshopserver.api;
 
 import com.shop.deviceshopserver.data.Device;
 import com.shop.deviceshopserver.service.DeviceService;
+import com.shop.deviceshopserver.session.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,5 +25,10 @@ public class DeviceController {
     public List<Device> getAllDevice(){
         return deviceService.getAllDevice();
     }
+
+   /* @GetMapping("/status")
+    public Status getCarrello() {
+
+    }*/
 
 }
