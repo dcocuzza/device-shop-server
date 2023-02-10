@@ -2,6 +2,7 @@ package com.shop.deviceshopserver.api;
 
 import com.shop.deviceshopserver.data.Acquisto;
 import com.shop.deviceshopserver.data.Device;
+import com.shop.deviceshopserver.service.DevService;
 import com.shop.deviceshopserver.service.DeviceService;
 import com.shop.deviceshopserver.session.Status;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,31 +14,35 @@ import java.util.List;
 @RestController
 public class DeviceController {
 
-    @Autowired
-    private final DeviceService deviceService;
+    /*@Autowired
+    private final DeviceService deviceService;*/
 
-    public DeviceController(DeviceService deviceService){
-        this.deviceService = deviceService;
+    @Autowired
+    private final DevService devService;
+
+    public DeviceController(/*DeviceService deviceService, */DevService devService){
+        //this.deviceService = deviceService;
+        this.devService = devService;
     }
 
     @GetMapping
     public List<Device> getAllDevice(){
-        return deviceService.getAllDevice();
+        return devService.getAllDevice();
     }
 
     @GetMapping(path = "/{id}")
     public List<Acquisto> getCarrello(@PathVariable("id") String id) {
-            return deviceService.getCarrello(id);
+            return devService.getCarrello(id);
     }
 
     @PostMapping(path = "/{id}")
     public String aggiungiCarrello(@PathVariable("id") String id, @RequestBody String disp){
-        return deviceService.aggiungiCarrello(id, disp);
+        return devService.aggiungiCarrello(id, disp);
     }
 
     @GetMapping(path = "/find/{key}")
     public List<Device> cercaDispositivi(@PathVariable("key") String key){
-        return deviceService.cercaDispositivi(key);
+        return devService.cercaDispositivi(key);
     }
 
 }
