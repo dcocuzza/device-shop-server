@@ -3,7 +3,6 @@ package com.shop.deviceshopserver.api;
 import com.shop.deviceshopserver.data.Acquisto;
 import com.shop.deviceshopserver.data.Device;
 import com.shop.deviceshopserver.service.DevService;
-import com.shop.deviceshopserver.service.DeviceService;
 import com.shop.deviceshopserver.session.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,14 +13,12 @@ import java.util.List;
 @RestController
 public class DeviceController {
 
-    /*@Autowired
-    private final DeviceService deviceService;*/
+
 
     @Autowired
     private final DevService devService;
 
-    public DeviceController(/*DeviceService deviceService, */DevService devService){
-        //this.deviceService = deviceService;
+    public DeviceController(DevService devService){
         this.devService = devService;
     }
 

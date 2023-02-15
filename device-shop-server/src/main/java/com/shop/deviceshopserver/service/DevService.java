@@ -4,7 +4,6 @@ import com.shop.deviceshopserver.data.Acquisto;
 import com.shop.deviceshopserver.data.Device;
 import com.shop.deviceshopserver.data.DeviceTable;
 import com.shop.deviceshopserver.http.HttpSender;
-import com.shop.deviceshopserver.session.DiskSer;
 import com.shop.deviceshopserver.session.Status;
 import org.springframework.stereotype.Service;
 
