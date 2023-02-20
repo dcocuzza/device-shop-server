@@ -13,8 +13,6 @@ import java.util.List;
 @RestController
 public class DeviceController {
 
-
-
     @Autowired
     private final DevService devService;
 
